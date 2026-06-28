@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "deskcrew": {
+      "type": "streamable-http",
+      "url": "https://deskcrew.io/api/mcp/YOUR_TENANT_SLUG"
+    }
+  }
+}
