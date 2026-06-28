@@ -83,4 +83,5 @@ grounds the agent tools.
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+© 2026 DeskCrew. All rights reserved. This repository documents the public DeskCrew MCP service
+for discovery and integration; the DeskCrew software and service are proprietary. See [LICENSE](./LICENSE).
