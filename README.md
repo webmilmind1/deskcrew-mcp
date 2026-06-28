@@ -34,7 +34,7 @@ Client config (Claude Desktop, Cursor, or any MCP client):
 Poke the public demo tenant — `initialize` and `tools/list` are free:
 
 ```bash
-curl -s https://deskcrew.io/api/mcp/demo \
+curl -s https://deskcrew.io/api/mcp/deskcrew \
   -H 'content-type: application/json' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
 ```
