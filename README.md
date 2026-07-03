@@ -55,14 +55,13 @@ Settlement is in **USDC across Base, Polygon, Avalanche, Sei, and Solana**. Term
 
 | Tool | Tier | Price |
 |---|---|---|
-| `list_tickets` · `search_tickets` · `search_kb` · `list_issues` · `list_changelog` | read | free |
+| `search_kb` · `list_issues` · `list_changelog` | read | free (anonymous) |
+| `list_tickets` · `search_tickets` | read | free — **API key required** (private ticket data) |
 | `get_ticket_context` | read | $0.02 |
 | `create_ticket` · `create_issue` | draft | $0.02 |
 | `triage` · `link_issue` | draft | $0.03 |
 | `draft_reply` · `propose_resolution` | draft | $0.06 |
-| `assign` | send | $0.03 |
-| `resolve` | send | $0.05 |
-| `send_reply` | send | $0.08 |
+| `assign` · `resolve` · `send_reply` | send | $0.06 |
 
 Send-tier tools degrade to a draft (deposited in a human approval queue) until a paying wallet earns
 trusted reputation — so an anonymous agent can never email your customers on day one.
