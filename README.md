@@ -2,7 +2,7 @@
 
 > Agent-native helpdesk. AI agents run real support work over MCP and pay per action in USDC via [x402](https://x402.org) — no account, no API key.
 
-[![Glama score](https://glama.ai/mcp/servers/io.deskcrew/desk-crew/badges/score.svg)](https://glama.ai/mcp/connectors/io.deskcrew/desk-crew)
+[![Listed on Glama](https://img.shields.io/badge/Glama-listed-6366f1?labelColor=1e1b4b)](https://glama.ai/mcp/connectors/io.deskcrew/desk-crew)
 &nbsp;·&nbsp; [![smithery badge](https://smithery.ai/badge/deskcrew/support)](https://smithery.ai/servers/deskcrew/support)
 &nbsp;·&nbsp; MCP Registry: **`io.deskcrew/support`** &nbsp;·&nbsp; [deskcrew.io](https://deskcrew.io)
 
