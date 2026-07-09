@@ -44,7 +44,8 @@ DeskCrew (a free account is enough to start). It begins with `mcp_`. Put it in y
 runtime's secret store — `~/.openclaw/.env` for OpenClaw — never in this file, never
 in a commit.
 
-**Grant the credential these tools and nothing else:**
+**A new credential is capped at the `draft` tier and cannot reach a customer.** That
+is the default, and it is the right one. The tools you need are already available:
 
 | Tool | Why |
 | --- | --- |
@@ -53,10 +54,13 @@ in a commit.
 | `search_kb` | ground every answer in real documentation |
 | `draft_reply` | leave a reply for a human to approve |
 
-Do **not** grant `send_reply`, `resolve`, or `assign` until a human has reviewed
-your drafts for at least a week and trusts them. Those tools reach the customer
-directly. Least privilege is the whole safety model here — a compromised or confused
-agent can only ever produce a draft that a person then reads.
+`send_reply`, `resolve`, and `assign` deliver to the customer, and a credential can
+only use them after an admin **explicitly escalates that credential for that tool**.
+Do not escalate until a human has reviewed your drafts for weeks and trusts them.
+
+This boundary is enforced by the server, from the credential — never from tool
+arguments. No instruction hidden in a ticket can widen it. Everything below assumes
+you are running draft-capped, as you should be.
 
 ## Handling one ticket
 

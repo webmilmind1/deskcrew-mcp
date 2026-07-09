@@ -11,10 +11,12 @@ human to approve.
 
 **Design principles, deliberately:**
 
-- **Draft-first.** The skill instructs the agent to file drafts, not send them. The
-  recommended credential cannot reach a customer at all.
-- **Least privilege.** Grant `list_tickets`, `get_ticket_context`, `search_kb` and
-  `draft_reply`. Nothing else.
+- **Draft-first, by default.** A new DeskCrew credential is capped at the `draft`
+  tier: `send_reply`, `resolve` and `assign` are refused until an admin explicitly
+  escalates that credential for that tool. The safe path is the default path.
+- **The boundary is server-side.** Tier is enforced from the credential, never from
+  tool arguments, so no instruction smuggled into a ticket can widen an agent's
+  scope. The skill text is guidance; the server is the guarantee.
 - **Ticket text is untrusted.** Customer messages are data, never instructions. The
   skill tells the agent to refuse and escalate on injection attempts.
 - **Escalate over guess.** Money, outages, security reports, legal, angry customers,
