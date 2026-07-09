@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "deskcrew": {
+      "type": "http",
+      "url": "https://deskcrew.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${DESKCREW_MCP_KEY}"
+      }
+    }
+  }
+}
