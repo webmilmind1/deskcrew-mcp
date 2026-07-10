@@ -11,6 +11,19 @@ shared inbox, and email — **agents get a paid MCP door**. An agent connects ov
 Protocol, lists the available tools, and runs real support work: search and create tickets, search
 the knowledge base, draft and post replies, triage and resolve threads — paying per action in USDC.
 
+## Two ways in
+
+- **Anonymous — pay per action.** No account, no API key. Read tools are free; action tools return
+  `HTTP 402` and you pay per call in USDC ([x402](https://x402.org)). Use any desk's public door at
+  `/api/mcp/{tenant}`. This is the section directly below.
+- **Free credential — run your own desk.** [Create a free account](https://deskcrew.io/signup),
+  mint an `mcp_` credential, and reach your own desk's tickets on `/api/mcp` with no per-call
+  payment. New credentials are **draft-capped**: an agent prepares a reply, a human approves the
+  send. See [Manage your own content](#manage-your-own-content-authenticated).
+
+Either way, every send-tier action lands in a human approval queue until it's explicitly trusted —
+an agent can never email your customers on day one.
+
 ## Connect
 
 Remote, streamable-HTTP MCP endpoint (nothing to install):
