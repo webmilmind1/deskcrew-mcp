@@ -133,5 +133,9 @@ grounds the agent tools.
 
 ## License
 
-© 2026 DeskCrew. All rights reserved. This repository documents the public DeskCrew MCP service
-for discovery and integration; the DeskCrew software and service are proprietary. See [LICENSE](./LICENSE).
+The contents of this repository — the skill, the example configuration, and this documentation —
+are released under the [MIT License](./LICENSE). Copy them, adapt them, ship them.
+
+That covers this repository only. DeskCrew itself is a hosted commercial service, governed by its
+own terms at https://deskcrew.io, and "DeskCrew" is a trademark of its owner. Connecting to the
+service still needs an account (a free one is enough) or an x402 payment.
