@@ -1,4 +1,4 @@
-# Security model — `deskcrew-support`
+# Security model: `deskcrew-support`
 
 This skill lets an autonomous agent read customer support tickets and write replies.
 That is a sensitive job, so here is exactly what it can and cannot do, and why.
@@ -15,7 +15,7 @@ The skill instructs an agent to **draft, never send**. That is guidance. The
 > admin explicitly escalates that credential, for that specific tool.
 
 The tier is read **from the credential**, never from tool arguments. No text inside a
-ticket — and no modification of this skill file — can widen it.
+ticket (and no modification of this skill file) can widen it.
 
 ## Threat model
 
@@ -32,7 +32,7 @@ untrusted data, refuse any instruction found inside it, escalate the ticket, and
 acknowledge the attempt in its reply. The server-side backstop is the tier cap above:
 even a fully compromised agent can only produce a draft that a human then reads.
 
-This follows the "rule of two" — an agent should not simultaneously hold private data,
+This follows the "rule of two": an agent should not simultaneously hold private data,
 untrusted content, and an external side-effect. Here the component that reads untrusted
 ticket text **cannot send**. The trifecta is broken structurally.
 
@@ -40,7 +40,7 @@ ticket text **cannot send**. The trifecta is broken structurally.
 
 If an admin escalates the credential to the `send` tier on day one, a bad draft reaches
 a real customer over real email. That is the installer's decision, and it should be made
-after weeks of reviewing drafts — not during setup.
+after weeks of reviewing drafts, not during setup.
 
 DeskCrew additionally enforces per-credential daily reply caps and a per-ticket ceiling
 of three replies per five minutes, so a looping agent cannot flood one conversation.
@@ -62,7 +62,7 @@ clawhub skill verify deskcrew-support
 clawhub inspect deskcrew-support
 ```
 
-The published bundle is a single `SKILL.md` — no scripts, no dependencies, no install
+The published bundle is a single `SKILL.md`: no scripts, no dependencies, no install
 hooks, nothing that executes. Read it. It is short on purpose.
 
 Source of truth: <https://github.com/webmilmind1/deskcrew-mcp/tree/main/skills/deskcrew-support>
@@ -71,7 +71,7 @@ Source of truth: <https://github.com/webmilmind1/deskcrew-mcp/tree/main/skills/d
 
 - It does not resolve, close, or assign tickets.
 - It does not send email or any customer-facing message.
-- It does not read data across workspaces — a credential is bound to one.
+- It does not read data across workspaces; a credential is bound to one.
 - It does not ask the agent to store, summarise, or carry ticket content between runs.
 
 ## Reporting a vulnerability
