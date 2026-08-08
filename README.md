@@ -73,6 +73,41 @@ curl -s https://deskcrew.io/api/mcp/deskcrew \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
 ```
 
+### stdio, for clients that need it
+
+The endpoint above is the desk. Some clients and directories only speak stdio, so this
+repo ships a dependency-free relay that forwards JSON-RPC between stdio and that
+endpoint. It is a pipe, not a second implementation: same tools, same pricing, same
+approval rules.
+
+```bash
+npx deskcrew-mcp                        # public demo desk
+DESKCREW_TENANT=acme npx deskcrew-mcp   # a specific desk, anonymous + pay per action
+DESKCREW_API_KEY=mcp_… npx deskcrew-mcp # your own desk, no per-call payment
+```
+
+```json
+{
+  "mcpServers": {
+    "deskcrew": {
+      "command": "npx",
+      "args": ["-y", "deskcrew-mcp"],
+      "env": { "DESKCREW_TENANT": "YOUR_TENANT_SLUG" }
+    }
+  }
+}
+```
+
+Or as a container. `-i` is required, because stdio needs stdin held open:
+
+```bash
+docker build -t deskcrew-mcp .
+docker run -i --rm -e DESKCREW_TENANT=YOUR_TENANT_SLUG deskcrew-mcp
+```
+
+Prefer the remote endpoint wherever your client supports it. The relay exists only to
+reach clients that cannot.
+
 ## Pay-per-action (x402)
 
 Read tools are **free**. Action tools are **priced**: when an agent calls one, the server replies
