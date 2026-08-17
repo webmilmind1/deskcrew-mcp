@@ -3,7 +3,7 @@
 > Agent-native helpdesk. AI agents run real support work over MCP and pay per action in USDC via [x402](https://x402.org). No account, no API key.
 
 [![Listed on Glama](https://img.shields.io/badge/Glama-listed-6366f1?labelColor=1e1b4b)](https://glama.ai/mcp/connectors/io.deskcrew/desk-crew)
-&nbsp;·&nbsp; [![smithery badge](https://smithery.ai/badge/deskcrew/support)](https://smithery.ai/servers/deskcrew/support)
+
 &nbsp;·&nbsp; MCP Registry: **`io.deskcrew/support`** &nbsp;·&nbsp; [deskcrew.io](https://deskcrew.io)
 
 <a href="https://www.producthunt.com/products/deskcrew?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-deskcrew"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1197215&theme=dark" alt="DeskCrew on Product Hunt" width="250" height="54" /></a>
