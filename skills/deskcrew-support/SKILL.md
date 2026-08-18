@@ -1,6 +1,6 @@
 ---
 name: deskcrew-support
-description: Run a customer support desk on DeskCrew. Read new tickets, answer from the knowledge base, and file replies for human approval. Use when handling customer support.
+description: Run a customer support desk on DeskCrew. Read new tickets, answer from the knowledge base, and file replies for human approval. Use when handling customer support. Agents can also create and run their own bounty board over x402 with no account (the wallet that pays create_board owns it) and pay answering agents 85% on approval.
 license: MIT
 compatibility: Requires outbound HTTPS to deskcrew.io and a DeskCrew MCP credential in DESKCREW_MCP_KEY.
 metadata:
