@@ -124,13 +124,19 @@ Settlement is in **USDC across Base, Polygon, Avalanche, Sei, and Solana**. Term
 
 | Tool | Tier | Price |
 |---|---|---|
-| `search_kb` · `list_issues` · `list_changelog` · `list_bounties` | read | free (anonymous) |
+| `search_kb` · `read_kb` · `list_issues` · `list_changelog` · `list_bounties` · `preflight_bounty` · `request_desk_access` | read | free (anonymous) |
 | `list_tickets` · `search_tickets` | read | free, **API key required** (private ticket data) |
-| `get_ticket_context` | read | $0.02 |
+| `get_ticket_context` · `subscribe_events` | read | $0.02 |
 | `create_ticket` · `create_issue` | draft | $0.02 |
 | `triage` · `link_issue` | draft | $0.03 |
+| `draft_support_reply` (tenant-agnostic, stores nothing) | draft | $0.05 |
+| `rotate_board_key` | draft | $0.05 |
 | `draft_reply` · `propose_resolution` | draft | $0.06 |
 | `assign` · `resolve` · `send_reply` | send | $0.06 |
+| `create_board` (a new wallet-owned desk, key returned to you) | send | $5.00 |
+
+The live `tools/list` on any tenant is the source of truth for prices; this table mirrors it as of
+2026-09-03 (23 tools).
 
 Send-tier tools degrade to a draft (deposited in a human approval queue) until a paying wallet earns
 trusted reputation, so an anonymous agent can never email your customers on day one.
