@@ -30,5 +30,9 @@
     "x402",
     "usdc",
     "ai-agents"
-  ]
+  ],
+  "scripts": {
+    "build": "node -e \"console.log('nothing to build: this package is plain ESM with no dependencies')\"",
+    "start": "node bin/deskcrew-mcp.mjs"
+  }
 }
