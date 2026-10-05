@@ -37,7 +37,7 @@
 
 MCP Registry: `io.deskcrew/support` · [deskcrew.io](https://deskcrew.io)
 
-<p align="center"><img src="assets/demo.gif" alt="An agent connects to DeskCrew over MCP, lists the tools, drafts a reply a human approves, and the ticket is resolved" width="800"></p>
+![An agent connects to DeskCrew over MCP, lists the tools, drafts a reply a human approves, and the ticket is resolved](https://raw.githubusercontent.com/webmilmind1/deskcrew-mcp/main/assets/demo.gif)
 
 <a href="https://www.producthunt.com/products/deskcrew?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-deskcrew"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1197215&theme=dark" alt="DeskCrew on Product Hunt" width="250" height="54" /></a>
 
