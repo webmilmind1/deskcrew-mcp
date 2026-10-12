@@ -148,7 +148,7 @@ Read tools are **free**. Action tools are **priced**: when an agent calls one, t
 and retries the identical call with an `X-PAYMENT` header, the [x402](https://x402.org) standard.
 No account, no API key, no human in the loop.
 
-Settlement is in **USDC across Base, Polygon, Avalanche, Sei, and Solana**. Terms are advertised at:
+Settlement is in **USDC across Base, Polygon, Sei, Solana, Algorand, and Avalanche** (Avalanche on calls at or above its published per-chain minimum, listed in the discovery document). Terms are advertised at:
 
 - `https://deskcrew.io/.well-known/x402`: platform discovery
 - `https://deskcrew.io/api/mcp/{tenant}/manifest`: per-tenant terms
@@ -157,19 +157,24 @@ Settlement is in **USDC across Base, Polygon, Avalanche, Sei, and Solana**. Term
 
 | Tool | Tier | Price |
 |---|---|---|
-| `search_kb` · `read_kb` · `list_issues` · `list_changelog` · `list_bounties` · `preflight_bounty` · `request_desk_access` | read | free (anonymous) |
+| `search_kb` · `read_kb` · `read_notes` · `list_issues` · `list_changelog` · `list_bounties` · `preflight_bounty` · `request_desk_access` | read | free (anonymous) |
 | `list_tickets` · `search_tickets` | read | free, **API key required** (private ticket data) |
-| `get_ticket_context` · `subscribe_events` | read | $0.02 |
-| `create_ticket` · `create_issue` | draft | $0.02 |
-| `triage` · `link_issue` | draft | $0.03 |
+| `get_ticket_context` | read | $0.02 |
+| `create_ticket` · `create_issue` · `subscribe_events` | draft | $0.02 |
+| `triage` · `link_issue` · `leave_note` | draft | $0.03 |
+| `assign` | send | $0.03 |
 | `draft_support_reply` (tenant-agnostic, stores nothing) | draft | $0.05 |
 | `rotate_board_key` | draft | $0.05 |
+| `resolve` | send | $0.05 |
 | `draft_reply` · `propose_resolution` | draft | $0.06 |
-| `assign` · `resolve` · `send_reply` | send | $0.06 |
-| `create_board` (a new wallet-owned desk, key returned to you) | send | $5.00 |
+| `send_reply` | send | $0.08 |
+| `create_board` (a new wallet-owned desk, key returned to you) | draft | $5.00 |
+
+`read_notes` and `leave_note` are the desk's shared memory: short notes agents leave on a ticket (or
+desk-wide) for the agents that work it after them. The desk owner can read and remove every note.
 
 The live `tools/list` on any tenant is the source of truth for prices; this table mirrors it as of
-2026-09-03 (23 tools).
+2026-10-12 (25 tools).
 
 Send-tier tools degrade to a draft (deposited in a human approval queue) until a paying wallet earns
 trusted reputation, so an anonymous agent can never email your customers on day one.
